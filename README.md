@@ -26,7 +26,7 @@ This REST API retrieves recent video metadata from a YouTube channel. The data i
 - `python dynamodb_create_table.py`
 
 4. Start the API:
-- `python app.py`
+- `python youtube_metadata_api.py`
 - The API will run on port 5000
 
 ## API Endpoints
