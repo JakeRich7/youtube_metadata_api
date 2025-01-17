@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 import boto3
 import feedparser
-import hashlib
 import re
 
 app = Flask(__name__)
@@ -27,7 +26,7 @@ def get_youtube_rss_feed(channel_id):
     videos = []
     for entry in feed.entries[:5]:  # Limit to recent 5 videos
         videos.append({
-            'video_id': hashlib.md5(entry.id.encode()).hexdigest(),
+            'video_id': entry.id,
             'title': entry.title,
             'published': entry.published,
             'link': entry.link
